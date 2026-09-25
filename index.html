@@ -1747,54 +1747,83 @@ const puzzle =
 let revealedPieces = 0;
 
 
-function createPuzzle() {
+           function createPuzzle() {
 
     puzzle.innerHTML = "";
 
+    revealedPieces = 0;
 
-    for (
-        let i = 0;
-        i < 9;
-        i++
-    ) {
+    document
+        .getElementById("puzzleInfo")
+        .textContent = "0 / 9 pieces revealed";
+
+    document
+        .getElementById("puzzleDone")
+        .classList.add("hidden");
+
+
+    for (let i = 0; i < 9; i++) {
 
         const tile =
             document.createElement("div");
 
-
         tile.className = "tile";
 
 
-        const x = i % 3;
+        /*
+           Menentukan posisi masing-masing
+           potongan foto.
 
-        const y =
-            Math.floor(i / 3);
+           0 1 2
+           3 4 5
+           6 7 8
+        */
+
+        const column = i % 3;
+        const row = Math.floor(i / 3);
+
+
+        /*
+           Karena background berukuran 300%,
+           posisi 0%, 50%, 100% membuat
+           masing-masing bagian foto bertemu
+           dengan tepat.
+        */
+
+        const positions = [
+            ["0%", "0%"],
+            ["50%", "0%"],
+            ["100%", "0%"],
+
+            ["0%", "50%"],
+            ["50%", "50%"],
+            ["100%", "50%"],
+
+            ["0%", "100%"],
+            ["50%", "100%"],
+            ["100%", "100%"]
+        ];
 
 
         tile.style.backgroundPosition =
-            `${x * 50}% ${y * 50}%`;
+            `${positions[i][0]} ${positions[i][1]}`;
 
 
         tile.dataset.revealed = "false";
 
 
-        tile.onclick = function() {
+        tile.onclick = function () {
 
             if (
-                tile.dataset.revealed ===
-                "true"
+                tile.dataset.revealed === "true"
             ) {
                 return;
             }
 
 
-            tile.dataset.revealed =
-                "true";
+            tile.dataset.revealed = "true";
 
-
-            tile.classList.add(
-                "selected"
-            );
+            tile.classList.add("selected");
 
 
             revealedPieces++;
@@ -1813,7 +1842,6 @@ function createPuzzle() {
                     .classList
                     .remove("hidden");
 
-
                 createConfetti();
 
             }
@@ -1829,8 +1857,6 @@ function createPuzzle() {
 
 
 createPuzzle();
-
-
 /* ==================================================
    LUCKY TICKET
 ================================================== */
