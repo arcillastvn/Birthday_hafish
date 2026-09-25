@@ -7,6 +7,7 @@
 <title>Happy Birthday, Hafish ✦</title>
 
 <style>
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
 
 * {
@@ -151,17 +152,13 @@ h3 {
 
 h1 {
     font-size: clamp(48px, 12vw, 90px);
-
     color: var(--light-gold);
-
     line-height: .95;
 }
 
 h2 {
     font-size: clamp(36px, 8vw, 60px);
-
     color: var(--light-gold);
-
     margin-bottom: 12px;
 }
 
@@ -171,9 +168,7 @@ h3 {
 
 .subtitle {
     color: #ffecc4;
-
     margin: 15px auto 25px;
-
     line-height: 1.7;
 }
 
@@ -257,7 +252,6 @@ h3 {
 
 .lock {
     font-size: 60px;
-
     margin-bottom: 10px;
 }
 
@@ -289,14 +283,12 @@ h3 {
 
 .error {
     color: #ff9d9d;
-
     display: none;
-
     margin-top: 12px;
 }
 
 /* =========================
-   MUSIC BUTTON
+   MUSIC
 ========================= */
 
 .music-control {
@@ -335,7 +327,6 @@ h3 {
     display: flex;
 
     justify-content: center;
-
     align-items: flex-end;
 
     margin: 20px 0;
@@ -343,7 +334,6 @@ h3 {
 
 .cake {
     width: 190px;
-
     position: relative;
 }
 
@@ -372,7 +362,6 @@ h3 {
 
 .cake-layer.show {
     opacity: 1;
-
     transform: translateY(0);
 }
 
@@ -441,6 +430,7 @@ h3 {
 }
 
 @keyframes flicker {
+
     from {
         transform: rotate(-45deg) scale(.8);
     }
@@ -448,6 +438,7 @@ h3 {
     to {
         transform: rotate(-45deg) scale(1.1);
     }
+
 }
 
 /* =========================
@@ -462,16 +453,12 @@ h3 {
     transition: .5s;
 }
 
-/* =========================
-   PUZZLE
-========================= */
-
-/*
-   FOTO UTUH BERADA DI SINI.
-   9 TILE HANYA MENJADI PENUTUP.
-*/
+/* ==================================================
+   PUZZLE — FIXED
+================================================== */
 
 .puzzle {
+
     width: min(330px, 85vw);
 
     aspect-ratio: 1 / 1;
@@ -484,7 +471,10 @@ h3 {
 
     grid-template-rows: repeat(3, 1fr);
 
-    gap: 0;
+    /*
+       FOTO CUMA ADA SEKALI DI SINI
+       JADI PASTI NYAMBUNG
+    */
 
     background-image:
         url('IMG-20260925-WA0005.jpg');
@@ -495,42 +485,52 @@ h3 {
 
     background-repeat: no-repeat;
 
-    border: 3px solid var(--gold);
+    border: 2px solid var(--gold);
 
     border-radius: 8px;
 
     overflow: hidden;
+
+    gap: 0;
+
 }
 
-/*
-   TILE TIDAK MEMILIKI BACKGROUND FOTO.
-   Jadi foto di belakang tetap satu kesatuan.
-*/
+/* SETIAP TILE HANYA JADI PENUTUP */
 
 .tile {
+
     position: relative;
 
     width: 100%;
     height: 100%;
 
-    background: transparent;
+    background:
+        linear-gradient(
+            135deg,
+            #470817,
+            #700d29
+        );
 
-    border: 1px solid var(--gold);
+    border: 2px solid var(--gold);
+
+    border-radius: 0;
 
     cursor: pointer;
 
-    transition: .3s;
+    transition:
+        opacity .4s ease,
+        transform .2s ease;
 
     min-height: 0;
 
     overflow: hidden;
+
 }
 
-/* =========================
-   PENUTUP PUZZLE
-========================= */
+/* SIMBOL PUZZLE */
 
 .tile::after {
+
     content: "✦";
 
     position: absolute;
@@ -543,6 +543,10 @@ h3 {
 
     align-items: center;
 
+    color: var(--light-gold);
+
+    font-size: 25px;
+
     background:
         linear-gradient(
             135deg,
@@ -550,29 +554,32 @@ h3 {
             #700d29
         );
 
-    color: var(--light-gold);
+    transition:
+        opacity .4s ease;
 
-    font-size: 25px;
-
-    transition: .35s;
 }
 
-/* =========================
-   SETELAH DIKLIK
-========================= */
+/* KETIKA DIKLIK, PENUTUP HILANG */
 
 .tile.selected::after {
+
     opacity: 0;
 
     pointer-events: none;
+
 }
 
 .tile.selected {
-    box-shadow:
-        inset 0 0 0 2px var(--light-gold);
 
-    transform: scale(.98);
+    opacity: 0;
+
+    pointer-events: none;
+
 }
+
+/* =========================
+   PUZZLE INFO
+========================= */
 
 .puzzle-info {
     color: #ffecc4;
@@ -595,7 +602,9 @@ h3 {
 }
 
 .ticket-icon:hover {
-    transform: rotate(-8deg) scale(1.1);
+    transform:
+        rotate(-8deg)
+        scale(1.1);
 }
 
 .ticket-result {
@@ -642,7 +651,8 @@ h3 {
         rgba(255,255,255,.07);
 
     box-shadow:
-        inset 0 0 25px rgba(255,220,130,.08);
+        inset 0 0 25px
+        rgba(255,220,130,.08);
 }
 
 .wish-message {
@@ -746,13 +756,15 @@ h3 {
 .gift-lid::before {
     left: 38px;
 
-    transform: rotate(25deg);
+    transform:
+        rotate(25deg);
 }
 
 .gift-lid::after {
     right: 38px;
 
-    transform: rotate(-25deg);
+    transform:
+        rotate(-25deg);
 }
 
 .gift-photo {
@@ -782,6 +794,7 @@ h3 {
 }
 
 .gift-box.open .gift-lid {
+
     transform:
         translateY(-110px)
         rotate(-8deg);
@@ -790,6 +803,7 @@ h3 {
 }
 
 .gift-box.open .gift-photo {
+
     opacity: 1;
 
     transform:
@@ -820,6 +834,7 @@ h3 {
 }
 
 .secret.show {
+
     display: block;
 
     animation:
@@ -855,6 +870,7 @@ h3 {
 }
 
 .letter h2 {
+
     color: #71152d;
 
     text-align: center;
@@ -863,6 +879,7 @@ h3 {
 }
 
 .letter-signature {
+
     text-align: right;
 
     margin-top: 25px;
@@ -873,6 +890,7 @@ h3 {
 ========================= */
 
 .confetti {
+
     position: fixed;
 
     top: -20px;
@@ -886,11 +904,15 @@ h3 {
 }
 
 @keyframes fall {
+
     to {
+
         transform:
             translateY(110vh)
             rotate(720deg);
+
     }
+
 }
 
 /* =========================
@@ -898,17 +920,25 @@ h3 {
 ========================= */
 
 @keyframes fadeIn {
+
     from {
+
         opacity: 0;
 
-        transform: translateY(15px);
+        transform:
+            translateY(15px);
+
     }
 
     to {
+
         opacity: 1;
 
-        transform: translateY(0);
+        transform:
+            translateY(0);
+
     }
+
 }
 
 /* =========================
@@ -923,7 +953,6 @@ h3 {
 
     .letter {
         padding: 28px 22px;
-
         font-size: 19px;
     }
 
@@ -933,6 +962,7 @@ h3 {
     }
 
 }
+
 </style>
 </head>
 
@@ -945,14 +975,14 @@ h3 {
 ================================================== -->
 
 <audio id="music" loop>
+
     <source
         src="SpotiDown.App - JoyRide - CORTIS.mp3"
         type="audio/mpeg"
     >
+
 </audio>
 
-
-<!-- MUSIC CONTROL -->
 
 <button
     class="music-control hidden"
@@ -1071,7 +1101,6 @@ h3 {
             Bikin kuenya dulu sebelum pesta dimulai!
         </p>
 
-
         <div class="cake-area">
 
             <div class="cake">
@@ -1094,7 +1123,6 @@ h3 {
                     </div>
 
                 </div>
-
 
                 <div
                     class="cake-layer"
@@ -1120,7 +1148,6 @@ h3 {
 
         </div>
 
-
         <button
             class="secondary-btn"
             onclick="addCakeLayer()"
@@ -1142,9 +1169,7 @@ h3 {
             🕯 Add Candles
         </button>
 
-
         <br><br>
-
 
         <button
             class="gold-btn hidden"
@@ -1178,14 +1203,12 @@ h3 {
             Klik tombolnya untuk meniup lilin.
         </p>
 
-
         <div
             class="big-candle"
             id="bigCandle"
         >
             🕯️
         </div>
-
 
         <button
             class="gold-btn"
@@ -1194,12 +1217,10 @@ h3 {
             Blow the Candles
         </button>
 
-
         <p
             class="wish-message"
             id="wishText"
         ></p>
-
 
         <button
             class="gold-btn hidden"
@@ -1240,12 +1261,10 @@ h3 {
             0 / 9 pieces revealed
         </p>
 
-
         <div
             class="puzzle"
             id="puzzle"
         ></div>
-
 
         <button
             class="gold-btn hidden"
@@ -1272,4 +1291,808 @@ h3 {
     <div class="card">
 
         <h2>
-           
+            Lucky Ticket 🎟️
+        </h2>
+
+        <p class="subtitle">
+            Pick your birthday ticket.
+        </p>
+
+        <div
+            class="ticket-icon"
+            id="ticket"
+            onclick="openTicket()"
+        >
+            🎟️
+        </div>
+
+        <p
+            class="ticket-result"
+            id="ticketResult"
+        ></p>
+
+        <button
+            class="gold-btn hidden"
+            id="ticketDone"
+            onclick="showPage('wishPage')"
+        >
+            Continue ✦
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     7. WISH JAR
+================================================== -->
+
+<section
+    class="page star-bg"
+    id="wishPage"
+>
+
+    <div class="card">
+
+        <h2>
+            Wish Jar ⭐
+        </h2>
+
+        <p class="subtitle">
+            Ambil beberapa wish untuk tahun barumu.
+        </p>
+
+        <div class="jar">
+            ⭐
+        </div>
+
+        <p
+            class="wish-message"
+            id="wishMessage"
+        >
+            Tap the star...
+        </p>
+
+        <button
+            class="gold-btn"
+            onclick="randomWish()"
+        >
+            ✨ Take a Wish
+        </button>
+
+        <br><br>
+
+        <button
+            class="gold-btn"
+            onclick="showPage('giftPage')"
+        >
+            Continue 🎁
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     8. GIFT BOX
+================================================== -->
+
+<section
+    class="page glitter-bg"
+    id="giftPage"
+>
+
+    <div class="card">
+
+        <h2>
+            A Gift For You 🎁
+        </h2>
+
+        <p class="subtitle">
+            There's something inside...
+        </p>
+
+        <div class="gift-area">
+
+            <div
+                class="gift-box"
+                id="giftBox"
+            >
+
+                <div class="gift-lid"></div>
+
+                <img
+                    src="IMG-20260924-WA0029.jpg"
+                    class="gift-photo"
+                    alt="Hafish"
+                >
+
+            </div>
+
+        </div>
+
+        <button
+            class="gold-btn"
+            onclick="openGift()"
+        >
+            Open Gift 🎁
+        </button>
+
+        <br>
+
+        <button
+            class="secondary-btn hidden"
+            id="secretButton"
+            onclick="openSecret()"
+        >
+            Wait... what's this? 👀
+        </button>
+
+        <div
+            class="secret"
+            id="secret"
+        >
+
+            ✦ You found the secret! ✦
+
+            <br><br>
+
+            Ada satu pesan kecil khusus buat kamu.
+
+            <br>
+
+            Jangan lupa senyum hari ini. :)
+
+        </div>
+
+        <br>
+
+        <button
+            class="gold-btn hidden"
+            id="giftDone"
+            onclick="showPage('letterPage')"
+        >
+            Read Your Letter 💌
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================================
+     9. LETTER
+================================================== -->
+
+<section
+    class="page star-bg"
+    id="letterPage"
+>
+
+    <div class="letter">
+
+        <h2>
+            For Hafish
+        </h2>
+
+        <p>
+            Happy birthday, Hafish!
+        </p>
+
+        <br>
+
+        <p>
+            Semoga di umur yang baru ini,
+            banyak hal baik datang ke hidupmu.
+            Semoga semua hal yang sedang kamu
+            perjuangkan pelan-pelan menemukan jalannya.
+        </p>
+
+        <br>
+
+        <p>
+            Thank you for all the random moments,
+            the laughs, and all the memories we've made.
+        </p>
+
+        <br>
+
+        <p>
+            I hope this little website can make
+            your birthday just a little bit more special.
+        </p>
+
+        <br>
+
+        <p>
+            Once again,
+            <br>
+
+            <b>
+                Happy Birthday, Hafish! 🎂✨
+            </b>
+        </p>
+
+        <p class="letter-signature">
+            — from me ^⁠_⁠^
+        </p>
+
+    </div>
+
+    <br>
+
+    <button
+        class="gold-btn"
+        onclick="showPage('endingPage')"
+    >
+        One Last Thing ✦
+    </button>
+
+</section>
+
+
+<!-- ==================================================
+     10. ENDING
+================================================== -->
+
+<section
+    class="page glitter-bg"
+    id="endingPage"
+>
+
+    <div class="card">
+
+        <p class="gold-text">
+            And finally...
+        </p>
+
+        <h1>
+            Happy Birthday
+        </h1>
+
+        <h2>
+            Hafish ✨
+        </h2>
+
+        <p class="subtitle">
+            May this year be full of good things,
+            good memories, and reasons to smile.
+        </p>
+
+        <div
+            style="
+                font-size:70px;
+                margin:25px;
+            "
+        >
+            🎂 ✨ 🎁
+        </div>
+
+        <p class="gold-text">
+            Thank you for making this year
+            a little brighter.
+        </p>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* ==================================================
+   PASSWORD
+================================================== */
+
+const correctPassword = "25092009";
+
+function checkPassword() {
+
+    const input =
+        document
+        .getElementById("password")
+        .value
+        .trim();
+
+    if (input === correctPassword) {
+
+        document
+            .getElementById("passwordError")
+            .style.display = "none";
+
+        const music =
+            document.getElementById("music");
+
+        music.play()
+            .catch(() => {
+                console.log(
+                    "Browser memblokir autoplay."
+                );
+            });
+
+        document
+            .getElementById("musicBtn")
+            .classList
+            .remove("hidden");
+
+        showPage("homePage");
+
+        createConfetti();
+
+    }
+
+    else {
+
+        document
+            .getElementById("passwordError")
+            .style.display = "block";
+
+    }
+
+}
+
+
+/* ==================================================
+   PAGE NAVIGATION
+================================================== */
+
+function showPage(id) {
+
+    document
+        .querySelectorAll(".page")
+        .forEach(page => {
+
+            page.classList.remove("active");
+
+        });
+
+    document
+        .getElementById(id)
+        .classList
+        .add("active");
+
+    window.scrollTo(0, 0);
+
+}
+
+
+/* ==================================================
+   MUSIC
+================================================== */
+
+const music =
+    document.getElementById("music");
+
+const musicBtn =
+    document.getElementById("musicBtn");
+
+function toggleMusic() {
+
+    if (music.paused) {
+
+        music.play();
+
+        musicBtn.textContent = "♫";
+
+    }
+
+    else {
+
+        music.pause();
+
+        musicBtn.textContent = "🔇";
+
+    }
+
+}
+
+
+/* ==================================================
+   CAKE GAME
+================================================== */
+
+let layers = 0;
+
+let frostingAdded = false;
+
+let candlesAdded = false;
+
+function addCakeLayer() {
+
+    if (layers >= 3) return;
+
+    layers++;
+
+    document
+        .getElementById(
+            "layer" + layers
+        )
+        .classList
+        .add("show");
+
+    checkCake();
+
+}
+
+function addFrosting() {
+
+    frostingAdded = true;
+
+    document
+        .getElementById("frosting")
+        .classList
+        .add("show");
+
+    checkCake();
+
+}
+
+function addCandles() {
+
+    candlesAdded = true;
+
+    document
+        .querySelectorAll(".candle")
+        .forEach(candle => {
+
+            candle.classList.add("show");
+
+        });
+
+    checkCake();
+
+}
+
+function checkCake() {
+
+    if (
+        layers >= 3 &&
+        frostingAdded &&
+        candlesAdded
+    ) {
+
+        document
+            .getElementById("cakeDone")
+            .classList
+            .remove("hidden");
+
+    }
+
+}
+
+
+/* ==================================================
+   BLOW CANDLE
+================================================== */
+
+let candleBlown = false;
+
+function blowCandle() {
+
+    if (candleBlown) return;
+
+    candleBlown = true;
+
+    document
+        .getElementById("bigCandle")
+        .textContent = "✨";
+
+    document
+        .getElementById("wishText")
+        .textContent =
+        "Your wish has been sent into the universe ✨";
+
+    document
+        .getElementById("afterCandle")
+        .classList
+        .remove("hidden");
+
+    createConfetti();
+
+}
+
+
+/* ==================================================
+   PUZZLE — FIXED VERSION
+================================================== */
+
+const puzzle =
+    document.getElementById("puzzle");
+
+let revealedPieces = 0;
+
+
+/*
+    Kita TIDAK membagi gambar menjadi 9 background-image.
+
+    Gambar sudah dipasang satu kali sebagai
+    background puzzle.
+
+    9 tile hanya berfungsi sebagai penutup.
+*/
+
+function createPuzzle() {
+
+    puzzle.innerHTML = "";
+
+    revealedPieces = 0;
+
+    document
+        .getElementById("puzzleInfo")
+        .textContent =
+        "0 / 9 pieces revealed";
+
+    document
+        .getElementById("puzzleDone")
+        .classList
+        .add("hidden");
+
+
+    for (
+        let i = 0;
+        i < 9;
+        i++
+    ) {
+
+        const tile =
+            document.createElement("div");
+
+        tile.className = "tile";
+
+        tile.dataset.revealed =
+            "false";
+
+
+        tile.onclick = function () {
+
+            if (
+                tile.dataset.revealed ===
+                "true"
+            ) {
+                return;
+            }
+
+
+            tile.dataset.revealed =
+                "true";
+
+
+            tile.classList.add(
+                "selected"
+            );
+
+
+            revealedPieces++;
+
+
+            document
+                .getElementById(
+                    "puzzleInfo"
+                )
+                .textContent =
+                `${revealedPieces} / 9 pieces revealed`;
+
+
+            if (
+                revealedPieces === 9
+            ) {
+
+                document
+                    .getElementById(
+                        "puzzleDone"
+                    )
+                    .classList
+                    .remove("hidden");
+
+
+                createConfetti();
+
+            }
+
+        };
+
+
+        puzzle.appendChild(tile);
+
+    }
+
+}
+
+
+/*
+    Puzzle dibuat saat halaman dibuka.
+*/
+
+createPuzzle();
+
+
+/* ==================================================
+   LUCKY TICKET
+================================================== */
+
+const tickets = [
+
+    "✨ You got: Unlimited good luck!",
+
+    "🎂 You got: One extra birthday cake!",
+
+    "⭐ You got: A year full of good memories!",
+
+    "🎁 You got: A mysterious surprise!",
+
+    "💫 You got: Main character energy!"
+
+];
+
+let ticketOpened = false;
+
+function openTicket() {
+
+    if (ticketOpened) return;
+
+    ticketOpened = true;
+
+    const result =
+        tickets[
+            Math.floor(
+                Math.random() *
+                tickets.length
+            )
+        ];
+
+    document
+        .getElementById("ticketResult")
+        .textContent = result;
+
+    document
+        .getElementById("ticket")
+        .textContent = "✨";
+
+    document
+        .getElementById("ticketDone")
+        .classList
+        .remove("hidden");
+
+    createConfetti();
+
+}
+
+
+/* ==================================================
+   WISH JAR
+================================================== */
+
+const wishes = [
+
+    "Semoga semua yang kamu usahakan membuahkan hasil. ✨",
+
+    "Semoga tahun ini lebih banyak ketawa daripada capeknya.",
+
+    "Semoga kamu bertemu banyak hal baik.",
+
+    "Semoga semua impian kecil maupun besar pelan-pelan tercapai.",
+
+    "Semoga selalu punya alasan untuk tersenyum. ⭐"
+
+];
+
+function randomWish() {
+
+    const wish =
+        wishes[
+            Math.floor(
+                Math.random() *
+                wishes.length
+            )
+        ];
+
+    document
+        .getElementById("wishMessage")
+        .textContent = wish;
+
+}
+
+
+/* ==================================================
+   GIFT BOX
+================================================== */
+
+let giftOpened = false;
+
+function openGift() {
+
+    if (giftOpened) return;
+
+    giftOpened = true;
+
+    document
+        .getElementById("giftBox")
+        .classList
+        .add("open");
+
+    createConfetti();
+
+    setTimeout(() => {
+
+        document
+            .getElementById("secretButton")
+            .classList
+            .remove("hidden");
+
+        document
+            .getElementById("giftDone")
+            .classList
+            .remove("hidden");
+
+    }, 900);
+
+}
+
+
+/* ==================================================
+   SECRET MESSAGE
+================================================== */
+
+function openSecret() {
+
+    document
+        .getElementById("secret")
+        .classList
+        .add("show");
+
+}
+
+
+/* ==================================================
+   CONFETTI
+================================================== */
+
+function createConfetti() {
+
+    for (
+        let i = 0;
+        i < 45;
+        i++
+    ) {
+
+        const confetti =
+            document.createElement("div");
+
+        confetti.className =
+            "confetti";
+
+        confetti.textContent =
+            Math.random() > .5
+            ? "✦"
+            : "•";
+
+        confetti.style.left =
+            Math.random() * 100 + "vw";
+
+        confetti.style.animationDelay =
+            Math.random() * 1.5 + "s";
+
+        confetti.style.fontSize =
+            (
+                Math.random() * 15 + 8
+            ) + "px";
+
+        document.body
+            .appendChild(confetti);
+
+        setTimeout(() => {
+
+            confetti.remove();
+
+        }, 4500);
+
+    }
+
+}
+
+</script>
+
+</body>
+            </html>
