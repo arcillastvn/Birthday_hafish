@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
 <title>Happy Birthday, Hafish ✦</title>
 
 <style>
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
 
 * {
@@ -40,6 +42,7 @@ button {
     cursor: pointer;
 }
 
+
 /* =========================
    PAGE
 ========================= */
@@ -60,8 +63,9 @@ button {
     align-items: center;
 }
 
+
 /* =========================
-   BACKGROUNDS
+   BACKGROUND
 ========================= */
 
 .glitter-bg {
@@ -71,6 +75,7 @@ button {
         radial-gradient(circle at 30% 75%, rgba(255,220,130,.5) 0 1px, transparent 2px),
         radial-gradient(circle at 85% 80%, rgba(255,230,150,.6) 0 1px, transparent 2px),
         linear-gradient(140deg, #25030c, #650b26 48%, #30030e);
+
     background-size:
         80px 80px,
         120px 120px,
@@ -86,6 +91,7 @@ button {
         radial-gradient(circle at 40% 65%, #fff0bd 0 2px, transparent 3px),
         radial-gradient(circle at 85% 75%, #e8c875 0 2px, transparent 3px),
         linear-gradient(145deg, #400714, #720d2b, #2d030d);
+
     background-size:
         120px 120px,
         170px 170px,
@@ -96,15 +102,20 @@ button {
 
 .page::after {
     content: "✦   ✧   ✦   ✧   ✦   ✧   ✦";
+
     position: absolute;
     inset: 0;
+
     color: rgba(255,220,130,.16);
+
     font-size: 22px;
     line-height: 120px;
     word-spacing: 25px;
+
     pointer-events: none;
     z-index: 0;
 }
+
 
 /* =========================
    CONTENT
@@ -119,14 +130,19 @@ button {
 
 .card {
     width: min(650px, 94%);
+
     padding: 35px 25px;
+
     text-align: center;
 
-    background: rgba(25, 0, 10, .62);
-    border: 1px solid rgba(244, 217, 139, .38);
+    background: rgba(25,0,10,.62);
+
+    border: 1px solid rgba(244,217,139,.38);
+
     border-radius: 25px;
 
     backdrop-filter: blur(12px);
+
     box-shadow:
         0 20px 70px rgba(0,0,0,.35),
         0 0 30px rgba(220,170,60,.08);
@@ -164,12 +180,14 @@ h3 {
     color: var(--light-gold);
 }
 
+
 /* =========================
    BUTTON
 ========================= */
 
 .gold-btn {
     border: 1px solid var(--gold);
+
     background: linear-gradient(
         135deg,
         #ad741c,
@@ -177,7 +195,9 @@ h3 {
     );
 
     color: #3a0712;
+
     padding: 13px 28px;
+
     border-radius: 30px;
 
     font-weight: 600;
@@ -190,16 +210,20 @@ h3 {
 
 .gold-btn:hover {
     transform: translateY(-3px);
+
     box-shadow:
         0 0 30px rgba(220,170,60,.45);
 }
 
 .secondary-btn {
     border: 1px solid var(--gold);
+
     background: transparent;
+
     color: var(--light-gold);
 
     padding: 11px 22px;
+
     border-radius: 25px;
 
     margin: 5px;
@@ -211,18 +235,22 @@ h3 {
     background: rgba(220,170,60,.1);
 }
 
+
 /* =========================
    PASSWORD
 ========================= */
 
 .password-box {
     width: min(430px, 92%);
+
     padding: 38px 28px;
 
     text-align: center;
 
     background: rgba(20,0,8,.65);
+
     border: 1px solid rgba(244,217,139,.4);
+
     border-radius: 25px;
 
     backdrop-filter: blur(12px);
@@ -239,31 +267,38 @@ h3 {
     padding: 14px 18px;
 
     border-radius: 25px;
+
     border: 1px solid var(--gold);
 
     background: rgba(0,0,0,.25);
+
     color: white;
 
     outline: none;
 
     text-align: center;
+
     font-size: 16px;
 
     margin: 10px 0 15px;
 }
 
 .password-box input:focus {
-    box-shadow: 0 0 15px rgba(220,170,60,.25);
+    box-shadow:
+        0 0 15px rgba(220,170,60,.25);
 }
 
 .error {
     color: #ff9d9d;
+
     display: none;
+
     margin-top: 12px;
 }
 
+
 /* =========================
-   MUSIC BUTTON
+   MUSIC
 ========================= */
 
 .music-control {
@@ -280,6 +315,7 @@ h3 {
     border: 1px solid var(--gold);
 
     background: rgba(40,0,10,.85);
+
     color: var(--light-gold);
 
     z-index: 999;
@@ -291,6 +327,7 @@ h3 {
     display: none !important;
 }
 
+
 /* =========================
    CAKE
 ========================= */
@@ -299,6 +336,7 @@ h3 {
     height: 300px;
 
     display: flex;
+
     justify-content: center;
     align-items: flex-end;
 
@@ -307,6 +345,7 @@ h3 {
 
 .cake {
     width: 190px;
+
     position: relative;
 }
 
@@ -335,6 +374,7 @@ h3 {
 
 .cake-layer.show {
     opacity: 1;
+
     transform: translateY(0);
 }
 
@@ -399,18 +439,25 @@ h3 {
     top: -18px;
     left: -2px;
 
-    animation: flicker .5s infinite alternate;
+    animation:
+        flicker .5s infinite alternate;
 }
 
 @keyframes flicker {
+
     from {
-        transform: rotate(-45deg) scale(.8);
+        transform:
+            rotate(-45deg)
+            scale(.8);
     }
 
     to {
-        transform: rotate(-45deg) scale(1.1);
+        transform:
+            rotate(-45deg)
+            scale(1.1);
     }
 }
+
 
 /* =========================
    BIG CANDLE
@@ -418,9 +465,12 @@ h3 {
 
 .big-candle {
     font-size: 100px;
+
     margin: 25px;
+
     transition: .5s;
 }
+
 
 /* =========================
    PUZZLE
@@ -428,19 +478,27 @@ h3 {
 
 .puzzle {
     width: min(330px, 85vw);
+
     aspect-ratio: 1 / 1;
 
     margin: 25px auto;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    grid-template-rows:
+        repeat(3, 1fr);
 
     gap: 2px;
 
     background: var(--gold);
+
     border: 2px solid var(--gold);
+
     border-radius: 8px;
+
     overflow: hidden;
 }
 
@@ -450,46 +508,55 @@ h3 {
     width: 100%;
     height: 100%;
 
-    background-image: url('IMG-20260925-WA0005.jpg');
+    background-image:
+        url('IMG-20260925-WA0005.jpg');
+
     background-repeat: no-repeat;
+
     background-size: 300% 300%;
 
     border: 1px solid var(--gold);
+
     border-radius: 5px;
 
     cursor: pointer;
+
     transition: .3s;
 
     min-height: 0;
+
     overflow: hidden;
 }
 
-/* PENUTUP PUZZLE */
 .tile::after {
     content: "✦";
 
     position: absolute;
+
     inset: 0;
 
     display: flex;
+
     justify-content: center;
     align-items: center;
 
-    background: linear-gradient(
-        135deg,
-        #470817,
-        #700d29
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #470817,
+            #700d29
+        );
 
     color: var(--light-gold);
+
     font-size: 25px;
 
     transition: .35s;
 }
 
-/* SETELAH DIKLIK */
 .tile.selected::after {
     opacity: 0;
+
     pointer-events: none;
 }
 
@@ -497,13 +564,16 @@ h3 {
     transform: scale(.94);
 
     box-shadow:
-        inset 0 0 0 2px var(--light-gold);
+        inset 0 0 0 2px
+        var(--light-gold);
 }
 
 .puzzle-info {
     color: #ffecc4;
+
     margin-bottom: 10px;
 }
+
 
 /* =========================
    TICKET
@@ -511,6 +581,7 @@ h3 {
 
 .ticket-icon {
     font-size: 80px;
+
     margin: 25px;
 
     cursor: pointer;
@@ -519,7 +590,9 @@ h3 {
 }
 
 .ticket-icon:hover {
-    transform: rotate(-8deg) scale(1.1);
+    transform:
+        rotate(-8deg)
+        scale(1.1);
 }
 
 .ticket-result {
@@ -535,6 +608,7 @@ h3 {
 
     margin: 15px;
 }
+
 
 /* =========================
    WISH JAR
@@ -565,7 +639,8 @@ h3 {
         rgba(255,255,255,.07);
 
     box-shadow:
-        inset 0 0 25px rgba(255,220,130,.08);
+        inset 0 0 25px
+        rgba(255,220,130,.08);
 }
 
 .wish-message {
@@ -582,8 +657,9 @@ h3 {
     line-height: 1.4;
 }
 
+
 /* =========================
-   GIFT BOX
+   GIFT
 ========================= */
 
 .gift-area {
@@ -667,11 +743,13 @@ h3 {
 
 .gift-lid::before {
     left: 38px;
+
     transform: rotate(25deg);
 }
 
 .gift-lid::after {
     right: 38px;
+
     transform: rotate(-25deg);
 }
 
@@ -717,6 +795,7 @@ h3 {
         scale(1);
 }
 
+
 /* =========================
    SECRET
 ========================= */
@@ -745,6 +824,7 @@ h3 {
     animation:
         fadeIn .8s ease;
 }
+
 
 /* =========================
    LETTER
@@ -784,8 +864,10 @@ h3 {
 
 .letter-signature {
     text-align: right;
+
     margin-top: 25px;
 }
+
 
 /* =========================
    CONFETTI
@@ -805,6 +887,7 @@ h3 {
 }
 
 @keyframes fall {
+
     to {
         transform:
             translateY(110vh)
@@ -812,21 +895,28 @@ h3 {
     }
 }
 
+
 /* =========================
    FADE
 ========================= */
 
 @keyframes fadeIn {
+
     from {
         opacity: 0;
-        transform: translateY(15px);
+
+        transform:
+            translateY(15px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 }
+
 
 /* =========================
    MOBILE
@@ -840,6 +930,7 @@ h3 {
 
     .letter {
         padding: 28px 22px;
+
         font-size: 19px;
     }
 
@@ -849,6 +940,7 @@ h3 {
     }
 
 }
+
 </style>
 </head>
 
@@ -856,34 +948,31 @@ h3 {
 <body>
 
 
-<!-- ==================================================
+<!-- =========================
      MUSIC
-================================================== -->
+========================= -->
 
 <audio id="music" loop>
-    <source src="SpotiDown.App - JoyRide - CORTIS.mp3" type="audio/mpeg">
+    <source
+        src="SpotiDown.App - JoyRide - CORTIS.mp3"
+        type="audio/mpeg">
 </audio>
 
 
-<!-- MUSIC CONTROL -->
-
 <button
     class="music-control hidden"
-    id="musicBtn"
-    onclick="toggleMusic()"
->
+    id="musicBtn">
     ♫
 </button>
 
 
-<!-- ==================================================
+<!-- =========================
      1. PASSWORD
-================================================== -->
+========================= -->
 
 <section
     class="page active glitter-bg"
-    id="passwordPage"
->
+    id="passwordPage">
 
     <div class="password-box">
 
@@ -903,22 +992,22 @@ h3 {
         <input
             type="password"
             id="password"
-            placeholder="Enter password..."
-            onkeydown="if(event.key === 'Enter') checkPassword()"
-        >
+            placeholder="Enter password...">
 
         <button
             class="gold-btn"
-            onclick="checkPassword()"
-        >
+            id="unlockBtn">
+
             Unlock ✦
+
         </button>
 
         <p
             class="error"
-            id="passwordError"
-        >
+            id="passwordError">
+
             Hmm... passwordnya salah 👀
+
         </p>
 
     </div>
@@ -926,14 +1015,13 @@ h3 {
 </section>
 
 
-<!-- ==================================================
+<!-- =========================
      2. HOME
-================================================== -->
+========================= -->
 
 <section
     class="page glitter-bg"
-    id="homePage"
->
+    id="homePage">
 
     <div class="card">
 
@@ -955,9 +1043,10 @@ h3 {
 
         <button
             class="gold-btn"
-            onclick="showPage('cakePage')"
-        >
+            id="beginBtn">
+
             Let's Begin ✨
+
         </button>
 
     </div>
@@ -965,14 +1054,13 @@ h3 {
 </section>
 
 
-<!-- ==================================================
-     3. CAKE GAME
-================================================== -->
+<!-- =========================
+     3. CAKE
+========================= -->
 
 <section
     class="page star-bg"
-    id="cakePage"
->
+    id="cakePage">
 
     <div class="card">
 
@@ -991,8 +1079,7 @@ h3 {
 
                 <div
                     class="candles"
-                    id="candles"
-                >
+                    id="candles">
 
                     <div class="candle">
                         <div class="flame"></div>
@@ -1011,23 +1098,23 @@ h3 {
 
                 <div
                     class="cake-layer"
-                    id="layer1"
-                ></div>
+                    id="layer1">
+                </div>
 
                 <div
                     class="cake-layer"
-                    id="layer2"
-                ></div>
+                    id="layer2">
+                </div>
 
                 <div
                     class="cake-layer"
-                    id="layer3"
-                ></div>
+                    id="layer3">
+                </div>
 
                 <div
                     class="cake-layer frosting"
-                    id="frosting"
-                ></div>
+                    id="frosting">
+                </div>
 
             </div>
 
@@ -1036,35 +1123,36 @@ h3 {
 
         <button
             class="secondary-btn"
-            onclick="addCakeLayer()"
-        >
+            id="layerBtn">
+
             + Add Layer
+
         </button>
 
         <button
             class="secondary-btn"
-            onclick="addFrosting()"
-        >
+            id="frostingBtn">
+
             ✦ Add Frosting
+
         </button>
 
         <button
             class="secondary-btn"
-            onclick="addCandles()"
-        >
-            🕯 Add Candles
-        </button>
+            id="candlesBtn">
 
+            🕯 Add Candles
+
+        </button>
 
         <br><br>
 
-
         <button
             class="gold-btn hidden"
-            id="cakeDone"
-            onclick="showPage('candlePage')"
-        >
+            id="cakeDone">
+
             Cake Complete ✨
+
         </button>
 
     </div>
@@ -1072,14 +1160,13 @@ h3 {
 </section>
 
 
-<!-- ==================================================
-     4. BLOW CANDLE
-================================================== -->
+<!-- =========================
+     4. CANDLE
+========================= -->
 
 <section
     class="page glitter-bg"
-    id="candlePage"
->
+    id="candlePage">
 
     <div class="card">
 
@@ -1091,35 +1178,33 @@ h3 {
             Klik tombolnya untuk meniup lilin.
         </p>
 
-
         <div
             class="big-candle"
-            id="bigCandle"
-        >
-            🕯️
-        </div>
+            id="bigCandle">
 
+            🕯️
+
+        </div>
 
         <button
             class="gold-btn"
-            onclick="blowCandle()"
-        >
-            Blow the Candles
-        </button>
+            id="blowBtn">
 
+            Blow the Candles
+
+        </button>
 
         <p
             class="wish-message"
-            id="wishText"
-        ></p>
-
+            id="wishText">
+        </p>
 
         <button
             class="gold-btn hidden"
-            id="afterCandle"
-            onclick="showPage('puzzlePage')"
-        >
+            id="afterCandle">
+
             Continue ✦
+
         </button>
 
     </div>
@@ -1127,14 +1212,13 @@ h3 {
 </section>
 
 
-<!-- ==================================================
-     5. PHOTO PUZZLE
-================================================== -->
+<!-- =========================
+     5. PUZZLE
+========================= -->
 
 <section
     class="page star-bg"
-    id="puzzlePage"
->
+    id="puzzlePage">
 
     <div class="card">
 
@@ -1143,29 +1227,29 @@ h3 {
         </h2>
 
         <p class="subtitle">
-            Klik semua bagian foto untuk mengungkap memory-nya!
+            Klik semua bagian foto untuk
+            mengungkap memory-nya!
         </p>
 
         <p
             class="puzzle-info"
-            id="puzzleInfo"
-        >
-            0 / 9 pieces revealed
-        </p>
+            id="puzzleInfo">
 
+            0 / 9 pieces revealed
+
+        </p>
 
         <div
             class="puzzle"
-            id="puzzle"
-        ></div>
-
+            id="puzzle">
+        </div>
 
         <button
             class="gold-btn hidden"
-            id="puzzleDone"
-            onclick="showPage('ticketPage')"
-        >
+            id="puzzleDone">
+
             Puzzle Complete ✨
+
         </button>
 
     </div>
@@ -1173,14 +1257,13 @@ h3 {
 </section>
 
 
-<!-- ==================================================
-     6. LUCKY TICKET
-================================================== -->
+<!-- =========================
+     6. TICKET
+========================= -->
 
 <section
     class="page glitter-bg"
-    id="ticketPage"
->
+    id="ticketPage">
 
     <div class="card">
 
@@ -1192,28 +1275,25 @@ h3 {
             Pick your birthday ticket.
         </p>
 
-
         <div
             class="ticket-icon"
-            id="ticket"
-            onclick="openTicket()"
-        >
-            🎟️
-        </div>
+            id="ticket">
 
+            🎟️
+
+        </div>
 
         <p
             class="ticket-result"
-            id="ticketResult"
-        ></p>
-
+            id="ticketResult">
+        </p>
 
         <button
             class="gold-btn hidden"
-            id="ticketDone"
-            onclick="showPage('wishPage')"
-        >
+            id="ticketDone">
+
             Continue ✦
+
         </button>
 
     </div>
@@ -1221,14 +1301,13 @@ h3 {
 </section>
 
 
-<!-- ==================================================
-     7. WISH JAR
-================================================== -->
+<!-- =========================
+     7. WISH
+========================= -->
 
 <section
     class="page star-bg"
-    id="wishPage"
->
+    id="wishPage">
 
     <div class="card">
 
@@ -1240,36 +1319,34 @@ h3 {
             Ambil beberapa wish untuk tahun barumu.
         </p>
 
-
         <div class="jar">
             ⭐
         </div>
 
-
         <p
             class="wish-message"
-            id="wishMessage"
-        >
-            Tap the star...
-        </p>
+            id="wishMessage">
 
+            Tap the star...
+
+        </p>
 
         <button
             class="gold-btn"
-            onclick="randomWish()"
-        >
-            ✨ Take a Wish
-        </button>
+            id="wishBtn">
 
+            ✨ Take a Wish
+
+        </button>
 
         <br><br>
 
-
         <button
             class="gold-btn"
-            onclick="showPage('giftPage')"
-        >
+            id="wishDone">
+
             Continue 🎁
+
         </button>
 
     </div>
@@ -1277,14 +1354,13 @@ h3 {
 </section>
 
 
-<!-- ==================================================
-     8. GIFT BOX
-================================================== -->
+<!-- =========================
+     8. GIFT
+========================= -->
 
 <section
     class="page glitter-bg"
-    id="giftPage"
->
+    id="giftPage">
 
     <div class="card">
 
@@ -1301,19 +1377,14 @@ h3 {
 
             <div
                 class="gift-box"
-                id="giftBox"
-            >
+                id="giftBox">
 
                 <div class="gift-lid"></div>
-
-
-                <!-- FOTO HAFISH -->
 
                 <img
                     src="IMG-20260924-WA0029.jpg"
                     class="gift-photo"
-                    alt="Hafish"
-                >
+                    alt="Hafish">
 
             </div>
 
@@ -1322,28 +1393,26 @@ h3 {
 
         <button
             class="gold-btn"
-            onclick="openGift()"
-        >
-            Open Gift 🎁
-        </button>
+            id="openGiftBtn">
 
+            Open Gift 🎁
+
+        </button>
 
         <br>
 
-
         <button
             class="secondary-btn hidden"
-            id="secretButton"
-            onclick="openSecret()"
-        >
+            id="secretButton">
+
             Wait... what's this? 👀
+
         </button>
 
 
         <div
             class="secret"
-            id="secret"
-        >
+            id="secret">
 
             ✦ You found the secret! ✦
 
@@ -1357,16 +1426,14 @@ h3 {
 
         </div>
 
-
         <br>
-
 
         <button
             class="gold-btn hidden"
-            id="giftDone"
-            onclick="showPage('letterPage')"
-        >
+            id="giftDone">
+
             Read Your Letter 💌
+
         </button>
 
     </div>
@@ -1374,58 +1441,51 @@ h3 {
 </section>
 
 
-<!-- ==================================================
+<!-- =========================
      9. LETTER
-================================================== -->
+========================= -->
 
 <section
     class="page star-bg"
-    id="letterPage"
->
+    id="letterPage">
 
     <div class="letter">
 
         <h2>
-            For Hafish 
+            For Hafish
         </h2>
-
 
         <p>
             Happy birthday, Hafish!
         </p>
 
-
         <br>
-
 
         <p>
             Semoga di umur yang baru ini,
             banyak hal baik datang ke hidupmu.
             Semoga semua hal yang sedang kamu
-            perjuangkan pelan-pelan menemukan jalannya.
+            perjuangkan pelan-pelan menemukan
+            jalannya.
         </p>
 
-
         <br>
-
 
         <p>
             Thank you for all the random moments,
-            the laughs, and all the memories we've made.
+            the laughs, and all the memories
+            we've made.
         </p>
 
-
         <br>
-
 
         <p>
             I hope this little website can make
-            your birthday just a little bit more special.
+            your birthday just a little bit more
+            special.
         </p>
 
-
         <br>
-
 
         <p>
             Once again,
@@ -1435,35 +1495,32 @@ h3 {
             </b>
         </p>
 
-
         <p class="letter-signature">
             — from me ^⁠_⁠^
         </p>
 
     </div>
 
-
     <br>
-
 
     <button
         class="gold-btn"
-        onclick="showPage('endingPage')"
-    >
+        id="endingBtn">
+
         One Last Thing ✦
+
     </button>
 
 </section>
 
 
-<!-- ==================================================
+<!-- =========================
      10. ENDING
-================================================== -->
+========================= -->
 
 <section
     class="page glitter-bg"
-    id="endingPage"
->
+    id="endingPage">
 
     <div class="card">
 
@@ -1471,32 +1528,28 @@ h3 {
             And finally...
         </p>
 
-
         <h1>
             Happy Birthday
         </h1>
 
-
         <h2>
             Hafish ✨
         </h2>
-
 
         <p class="subtitle">
             May this year be full of good things,
             good memories, and reasons to smile.
         </p>
 
-
         <div
             style="
                 font-size:70px;
                 margin:25px;
-            "
-        >
-            🎂 ✨ 🎁
-        </div>
+            ">
 
+            🎂 ✨ 🎁
+
+        </div>
 
         <p class="gold-text">
             Thank you for making this year
@@ -1511,67 +1564,14 @@ h3 {
 <script>
 
 /* ==================================================
-   PASSWORD
+   ELEMENTS
 ================================================== */
 
-const correctPassword = "25092009";
+const music =
+    document.getElementById("music");
 
-
-function checkPassword() {
-
-    const input =
-        document
-        .getElementById("password")
-        .value
-        .trim();
-
-
-    if (input === correctPassword) {
-
-        document
-            .getElementById("passwordError")
-            .style.display = "none";
-
-
-        /*
-            MUSIC DIMULAI SETELAH USER
-            BERINTERAKSI DENGAN PASSWORD
-        */
-
-        const music =
-            document.getElementById("music");
-
-
-        music.play()
-            .catch(() => {
-                console.log(
-                    "Browser memblokir autoplay."
-                );
-            });
-
-
-        document
-            .getElementById("musicBtn")
-            .classList
-            .remove("hidden");
-
-
-        showPage("homePage");
-
-
-        createConfetti();
-
-    }
-
-    else {
-
-        document
-            .getElementById("passwordError")
-            .style.display = "block";
-
-    }
-
-}
+const musicBtn =
+    document.getElementById("musicBtn");
 
 
 /* ==================================================
@@ -1589,50 +1589,142 @@ function showPage(id) {
         });
 
 
-    document
-        .getElementById(id)
-        .classList.add("active");
+    const target =
+        document.getElementById(id);
+
+
+    if (target) {
+
+        target.classList.add("active");
+
+    }
 
 
     window.scrollTo(0, 0);
+}
+
+
+/* ==================================================
+   PASSWORD
+================================================== */
+
+const correctPassword = "25092009";
+
+const passwordInput =
+    document.getElementById("password");
+
+const unlockBtn =
+    document.getElementById("unlockBtn");
+
+const passwordError =
+    document.getElementById("passwordError");
+
+
+function checkPassword() {
+
+    const input =
+        passwordInput.value.trim();
+
+
+    if (input === correctPassword) {
+
+        passwordError.style.display = "none";
+
+
+        music.play().catch(() => {
+            console.log("Autoplay diblokir browser.");
+        });
+
+
+        musicBtn.classList.remove("hidden");
+
+
+        showPage("homePage");
+
+
+        createConfetti();
+
+    }
+
+    else {
+
+        passwordError.style.display = "block";
+
+        passwordInput.value = "";
+
+        passwordInput.focus();
+
+    }
 
 }
+
+
+unlockBtn.addEventListener(
+    "click",
+    checkPassword
+);
+
+
+passwordInput.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Enter") {
+
+            checkPassword();
+
+        }
+
+    }
+);
+
+
+/* ==================================================
+   HOME
+================================================== */
+
+document
+    .getElementById("beginBtn")
+    .addEventListener(
+        "click",
+        function() {
+
+            showPage("cakePage");
+
+        }
+    );
 
 
 /* ==================================================
    MUSIC
 ================================================== */
 
-const music =
-    document.getElementById("music");
+musicBtn.addEventListener(
+    "click",
+    function() {
 
-const musicBtn =
-    document.getElementById("musicBtn");
+        if (music.paused) {
 
+            music.play();
 
-function toggleMusic() {
+            musicBtn.textContent = "♫";
 
-    if (music.paused) {
+        }
 
-        music.play();
+        else {
 
-        musicBtn.textContent = "♫";
+            music.pause();
 
-    }
+            musicBtn.textContent = "🔇";
 
-    else {
-
-        music.pause();
-
-        musicBtn.textContent = "🔇";
+        }
 
     }
-
-}
+);
 
 
 /* ==================================================
-   CAKE GAME
+   CAKE
 ================================================== */
 
 let layers = 0;
@@ -1640,62 +1732,6 @@ let layers = 0;
 let frostingAdded = false;
 
 let candlesAdded = false;
-
-
-function addCakeLayer() {
-
-    if (layers >= 3) return;
-
-
-    layers++;
-
-
-    document
-        .getElementById(
-            "layer" + layers
-        )
-        .classList
-        .add("show");
-
-
-    checkCake();
-
-}
-
-
-function addFrosting() {
-
-    frostingAdded = true;
-
-
-    document
-        .getElementById("frosting")
-        .classList
-        .add("show");
-
-
-    checkCake();
-
-}
-
-
-function addCandles() {
-
-    candlesAdded = true;
-
-
-    document
-        .querySelectorAll(".candle")
-        .forEach(candle => {
-
-            candle.classList.add("show");
-
-        });
-
-
-    checkCake();
-
-}
 
 
 function checkCake() {
@@ -1716,6 +1752,91 @@ function checkCake() {
 }
 
 
+document
+    .getElementById("layerBtn")
+    .addEventListener(
+        "click",
+        function() {
+
+            if (layers >= 3) {
+                return;
+            }
+
+
+            layers++;
+
+
+            document
+                .getElementById(
+                    "layer" + layers
+                )
+                .classList
+                .add("show");
+
+
+            checkCake();
+
+        }
+    );
+
+
+document
+    .getElementById("frostingBtn")
+    .addEventListener(
+        "click",
+        function() {
+
+            frostingAdded = true;
+
+
+            document
+                .getElementById("frosting")
+                .classList
+                .add("show");
+
+
+            checkCake();
+
+        }
+    );
+
+
+document
+    .getElementById("candlesBtn")
+    .addEventListener(
+        "click",
+        function() {
+
+            candlesAdded = true;
+
+
+            document
+                .querySelectorAll(".candle")
+                .forEach(function(candle) {
+
+                    candle.classList.add("show");
+
+                });
+
+
+            checkCake();
+
+        }
+    );
+
+
+document
+    .getElementById("cakeDone")
+    .addEventListener(
+        "click",
+        function() {
+
+            showPage("candlePage");
+
+        }
+    );
+
+
 /* ==================================================
    BLOW CANDLE
 ================================================== */
@@ -1723,34 +1844,53 @@ function checkCake() {
 let candleBlown = false;
 
 
-function blowCandle() {
+document
+    .getElementById("blowBtn")
+    .addEventListener(
+        "click",
+        function() {
 
-    if (candleBlown) return;
-
-
-    candleBlown = true;
-
-
-    document
-        .getElementById("bigCandle")
-        .textContent = "✨";
+            if (candleBlown) {
+                return;
+            }
 
 
-    document
-        .getElementById("wishText")
-        .textContent =
-        "Your wish has been sent into the universe ✨";
+            candleBlown = true;
 
 
-    document
-        .getElementById("afterCandle")
-        .classList
-        .remove("hidden");
+            document
+                .getElementById("bigCandle")
+                .textContent = "✨";
 
 
-    createConfetti();
+            document
+                .getElementById("wishText")
+                .textContent =
+                "Your wish has been sent into the universe ✨";
 
-}
+
+            document
+                .getElementById("afterCandle")
+                .classList
+                .remove("hidden");
+
+
+            createConfetti();
+
+        }
+    );
+
+
+document
+    .getElementById("afterCandle")
+    .addEventListener(
+        "click",
+        function() {
+
+            showPage("puzzlePage");
+
+        }
+    );
 
 
 /* ==================================================
@@ -1769,16 +1909,21 @@ function createPuzzle() {
 
     revealedPieces = 0;
 
+
     document
         .getElementById("puzzleInfo")
-        .textContent = "0 / 9 pieces revealed";
+        .textContent =
+        "0 / 9 pieces revealed";
+
 
     document
         .getElementById("puzzleDone")
-        .classList.add("hidden");
+        .classList
+        .add("hidden");
 
 
     const positions = [
+
         "0% 0%",
         "50% 0%",
         "100% 0%",
@@ -1790,13 +1935,19 @@ function createPuzzle() {
         "0% 100%",
         "50% 100%",
         "100% 100%"
+
     ];
 
 
-    for (let i = 0; i < 9; i++) {
+    for (
+        let i = 0;
+        i < 9;
+        i++
+    ) {
 
         const tile =
             document.createElement("div");
+
 
         tile.className = "tile";
 
@@ -1808,40 +1959,56 @@ function createPuzzle() {
         tile.dataset.revealed = "false";
 
 
-        tile.onclick = function () {
+        tile.addEventListener(
+            "click",
+            function() {
 
-            if (
-                tile.dataset.revealed === "true"
-            ) {
-                return;
-            }
+                if (
+                    tile.dataset.revealed ===
+                    "true"
+                ) {
 
+                    return;
 
-            tile.dataset.revealed = "true";
-
-            tile.classList.add("selected");
-
-            revealedPieces++;
+                }
 
 
-            document
-                .getElementById("puzzleInfo")
-                .textContent =
-                `${revealedPieces} / 9 pieces revealed`;
+                tile.dataset.revealed =
+                    "true";
 
 
-            if (revealedPieces === 9) {
+                tile.classList.add(
+                    "selected"
+                );
+
+
+                revealedPieces++;
+
 
                 document
-                    .getElementById("puzzleDone")
-                    .classList
-                    .remove("hidden");
+                    .getElementById("puzzleInfo")
+                    .textContent =
+                    `${revealedPieces} / 9 pieces revealed`;
 
-                createConfetti();
+
+                if (
+                    revealedPieces === 9
+                ) {
+
+                    document
+                        .getElementById(
+                            "puzzleDone"
+                        )
+                        .classList
+                        .remove("hidden");
+
+
+                    createConfetti();
+
+                }
 
             }
-
-        };
+        );
 
 
         puzzle.appendChild(tile);
@@ -1852,8 +2019,22 @@ function createPuzzle() {
 
 
 createPuzzle();
+
+
+document
+    .getElementById("puzzleDone")
+    .addEventListener(
+        "click",
+        function() {
+
+            showPage("ticketPage");
+
+        }
+    );
+
+
 /* ==================================================
-   LUCKY TICKET
+   TICKET
 ================================================== */
 
 const tickets = [
@@ -1874,42 +2055,63 @@ const tickets = [
 let ticketOpened = false;
 
 
-function openTicket() {
+document
+    .getElementById("ticket")
+    .addEventListener(
+        "click",
+        function() {
 
-    if (ticketOpened) return;
-
-
-    ticketOpened = true;
-
-
-    const result =
-        tickets[
-            Math.floor(
-                Math.random() *
-                tickets.length
-            )
-        ];
+            if (ticketOpened) {
+                return;
+            }
 
 
-    document
-        .getElementById("ticketResult")
-        .textContent = result;
+            ticketOpened = true;
 
 
-    document
-        .getElementById("ticket")
-        .textContent = "✨";
+            const result =
+                tickets[
+                    Math.floor(
+                        Math.random() *
+                        tickets.length
+                    )
+                ];
 
 
-    document
-        .getElementById("ticketDone")
-        .classList
-        .remove("hidden");
+            document
+                .getElementById(
+                    "ticketResult"
+                )
+                .textContent = result;
 
 
-    createConfetti();
+            document
+                .getElementById("ticket")
+                .textContent = "✨";
 
-}
+
+            document
+                .getElementById("ticketDone")
+                .classList
+                .remove("hidden");
+
+
+            createConfetti();
+
+        }
+    );
+
+
+document
+    .getElementById("ticketDone")
+    .addEventListener(
+        "click",
+        function() {
+
+            showPage("wishPage");
+
+        }
+    );
 
 
 /* ==================================================
@@ -1931,78 +2133,144 @@ const wishes = [
 ];
 
 
-function randomWish() {
+document
+    .getElementById("wishBtn")
+    .addEventListener(
+        "click",
+        function() {
 
-    const wish =
-        wishes[
-            Math.floor(
-                Math.random() *
-                wishes.length
-            )
-        ];
+            const wish =
+                wishes[
+                    Math.floor(
+                        Math.random() *
+                        wishes.length
+                    )
+                ];
 
 
-    document
-        .getElementById("wishMessage")
-        .textContent = wish;
+            document
+                .getElementById(
+                    "wishMessage"
+                )
+                .textContent = wish;
 
-}
+        }
+    );
+
+
+document
+    .getElementById("wishDone")
+    .addEventListener(
+        "click",
+        function() {
+
+            showPage("giftPage");
+
+        }
+    );
 
 
 /* ==================================================
-   GIFT BOX
+   GIFT
 ================================================== */
 
 let giftOpened = false;
 
 
-function openGift() {
+document
+    .getElementById("openGiftBtn")
+    .addEventListener(
+        "click",
+        function() {
 
-    if (giftOpened) return;
-
-
-    giftOpened = true;
-
-
-    document
-        .getElementById("giftBox")
-        .classList
-        .add("open");
+            if (giftOpened) {
+                return;
+            }
 
 
-    createConfetti();
+            giftOpened = true;
 
 
-    setTimeout(() => {
-
-        document
-            .getElementById("secretButton")
-            .classList
-            .remove("hidden");
+            document
+                .getElementById("giftBox")
+                .classList
+                .add("open");
 
 
-        document
-            .getElementById("giftDone")
-            .classList
-            .remove("hidden");
+            createConfetti();
 
-    }, 900);
 
-}
+            setTimeout(
+                function() {
+
+                    document
+                        .getElementById(
+                            "secretButton"
+                        )
+                        .classList
+                        .remove("hidden");
+
+
+                    document
+                        .getElementById(
+                            "giftDone"
+                        )
+                        .classList
+                        .remove("hidden");
+
+                },
+                900
+            );
+
+        }
+    );
 
 
 /* ==================================================
-   SECRET MESSAGE
+   SECRET
 ================================================== */
 
-function openSecret() {
+document
+    .getElementById("secretButton")
+    .addEventListener(
+        "click",
+        function() {
 
-    document
-        .getElementById("secret")
-        .classList
-        .add("show");
+            document
+                .getElementById("secret")
+                .classList
+                .add("show");
 
-}
+        }
+    );
+
+
+/* ==================================================
+   LETTER
+================================================== */
+
+document
+    .getElementById("giftDone")
+    .addEventListener(
+        "click",
+        function() {
+
+            showPage("letterPage");
+
+        }
+    );
+
+
+document
+    .getElementById("endingBtn")
+    .addEventListener(
+        "click",
+        function() {
+
+            showPage("endingPage");
+
+        }
+    );
 
 
 /* ==================================================
@@ -2049,11 +2317,14 @@ function createConfetti() {
             .appendChild(confetti);
 
 
-        setTimeout(() => {
+        setTimeout(
+            function() {
 
-            confetti.remove();
+                confetti.remove();
 
-        }, 4500);
+            },
+            4500
+        );
 
     }
 
@@ -2062,4 +2333,4 @@ function createConfetti() {
 </script>
 
 </body>
-</html>
+    </html>
