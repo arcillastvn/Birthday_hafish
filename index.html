@@ -1760,11 +1760,10 @@ function blowCandle() {
 const puzzle =
     document.getElementById("puzzle");
 
-
 let revealedPieces = 0;
 
 
-           function createPuzzle() {
+function createPuzzle() {
 
     puzzle.innerHTML = "";
 
@@ -1776,103 +1775,6 @@ let revealedPieces = 0;
 
     document
         .getElementById("puzzleDone")
-        .classList.add("hidden");
-
-
-    for (let i = 0; i < 9; i++) {
-
-        const tile =
-            document.createElement("div");
-
-        tile.className = "tile";
-
-
-        /*
-           Menentukan posisi masing-masing
-           potongan foto.
-
-           0 1 2
-           3 4 5
-           6 7 8
-        */
-
-        const column = i % 3;
-        const row = Math.floor(i / 3);
-
-
-        /*
-           Karena background berukuran 300%,
-           posisi 0%, 50%, 100% membuat
-           masing-masing bagian foto bertemu
-           dengan tepat.
-        */
-
-        const positions = [
-            ["0%", "0%"],
-            ["50%", "0%"],
-            ["100%", "0%"],
-
-            ["0%", "50%"],
-            ["50%", "50%"],
-            ["100%", "50%"],
-
-            ["0%", "100%"],
-            ["50%", "100%"],
-            ["100%", "100%"]
-        ];
-
-
-        tile.style.backgroundPosition =
-            `${positions[i][0]} ${positions[i][1]}`;
-
-
-        tile.dataset.revealed = "false";
-
-
-        tile.onclick = function () {
-
-            if (
-                tile.dataset.revealed === "true"
-            ) {
-                return;
-            }
-
-
-            tile.dataset.revealed = "true";
-
-            tile.classList.add("selected");
-
-
-            revealedPieces++;
-
-
-            document
-                .getElementById("puzzleInfo")
-                .textContent =
-                `${revealedPieces} / 9 pieces revealed`;
-
-
-            if (revealedPieces >= 9) {
-
-                document
-                    .getElementById("puzzleDone")
-                    .classList
-                    .remove("hidden");
-
-                createConfetti();
-
-            }
-function createPuzzle() {
-
-    puzzle.innerHTML = "";
-
-    revealedPieces = 0;
-
-    document.getElementById("puzzleInfo")
-        .textContent =
-        "0 / 9 pieces revealed";
-
-    document.getElementById("puzzleDone")
         .classList.add("hidden");
 
 
@@ -1922,14 +1824,16 @@ function createPuzzle() {
             revealedPieces++;
 
 
-            document.getElementById("puzzleInfo")
+            document
+                .getElementById("puzzleInfo")
                 .textContent =
                 `${revealedPieces} / 9 pieces revealed`;
 
 
             if (revealedPieces === 9) {
 
-                document.getElementById("puzzleDone")
+                document
+                    .getElementById("puzzleDone")
                     .classList
                     .remove("hidden");
 
