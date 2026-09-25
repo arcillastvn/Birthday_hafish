@@ -445,38 +445,55 @@ h3 {
 }
 
 .tile {
+    position: relative;
+
     width: 100%;
     height: 100%;
 
     background-image: url('IMG-20260924-WA0029.jpg');
     background-repeat: no-repeat;
-
-    /*
-       3x3 puzzle:
-       ukuran background dibuat 300% x 300%
-       supaya satu foto memenuhi seluruh puzzle
-    */
     background-size: 300% 300%;
 
-    border: none;
-    border-radius: 0;
+    border: 1px solid var(--gold);
+    border-radius: 5px;
 
     cursor: pointer;
-
-    transition:
-        transform .25s,
-        opacity .25s,
-        filter .25s;
+    transition: .3s;
 
     min-height: 0;
+    overflow: hidden;
 }
 
-.tile:hover {
-    filter: brightness(1.15);
+/* PENUTUP PUZZLE */
+.tile::after {
+    content: "✦";
+
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #470817,
+        #700d29
+    );
+
+    color: var(--light-gold);
+    font-size: 25px;
+
+    transition: .35s;
+}
+
+/* SETELAH DIKLIK */
+.tile.selected::after {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .tile.selected {
-    opacity: 1;
     transform: scale(.94);
 
     box-shadow:
@@ -1839,6 +1856,80 @@ let revealedPieces = 0;
 
                 document
                     .getElementById("puzzleDone")
+                    .classList
+                    .remove("hidden");
+
+                createConfetti();
+
+            }
+function createPuzzle() {
+
+    puzzle.innerHTML = "";
+
+    revealedPieces = 0;
+
+    document.getElementById("puzzleInfo")
+        .textContent =
+        "0 / 9 pieces revealed";
+
+    document.getElementById("puzzleDone")
+        .classList.add("hidden");
+
+
+    const positions = [
+        "0% 0%",
+        "50% 0%",
+        "100% 0%",
+
+        "0% 50%",
+        "50% 50%",
+        "100% 50%",
+
+        "0% 100%",
+        "50% 100%",
+        "100% 100%"
+    ];
+
+
+    for (let i = 0; i < 9; i++) {
+
+        const tile =
+            document.createElement("div");
+
+        tile.className = "tile";
+
+
+        tile.style.backgroundPosition =
+            positions[i];
+
+
+        tile.dataset.revealed = "false";
+
+
+        tile.onclick = function () {
+
+            if (
+                tile.dataset.revealed === "true"
+            ) {
+                return;
+            }
+
+
+            tile.dataset.revealed = "true";
+
+            tile.classList.add("selected");
+
+            revealedPieces++;
+
+
+            document.getElementById("puzzleInfo")
+                .textContent =
+                `${revealedPieces} / 9 pieces revealed`;
+
+
+            if (revealedPieces === 9) {
+
+                document.getElementById("puzzleDone")
                     .classList
                     .remove("hidden");
 
